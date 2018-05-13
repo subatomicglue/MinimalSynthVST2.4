@@ -154,8 +154,8 @@ set(INCLUDE_DIRS
 )
 
 if (WIN32)
-  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc)
-  set(DEF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/windows.def ${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc)
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/resource.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/src/resource.rc)
+  set(DEF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/windows.def ${CMAKE_CURRENT_SOURCE_DIR}/src/resource.rc)
   set(LINK_LIBS Gdi32.lib Shell32.lib Ole32.lib User32.lib Comdlg32.lib Advapi32.lib)
 endif()
 if (APPLE)
