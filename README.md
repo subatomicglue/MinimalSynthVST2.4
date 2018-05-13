@@ -49,7 +49,7 @@ $  ./test64
 * Problem:
 `clang-cl` giving error during cross compile:
 ```
-./MinimalSynthVST2.4/vstgui/vstgui/lib/controls/../cstring.h(26,2):  error:
+vstgui/vstgui/lib/controls/../cstring.h(26,2):  error:
       exception specification of explicitly defaulted default constructor does not match the
       calculated one
         UTF8CodePointIterator () noexcept = default;
@@ -66,6 +66,7 @@ To
 //UTF8CodePointIterator () /*noexcept*/ = default;      // KEVIN: this resulted in error under clang-cl
 
 UTF8CodePointIterator () noexcept /*=default*/: it() {} // KEVIN: removed default, replace with {}
+
 ```
 
 ## NOTES:
