@@ -171,10 +171,10 @@ if (APPLE)
 	   "-framework OpenGL"
 	)
 	set(ICONS
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_128x128.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_16x16.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_16x16@2x.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_32x32@2x.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_128x128.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_16x16.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_16x16@2x.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_32x32@2x.png
 	   ${CMAKE_CURRENT_SOURCE_DIR}/icon.icns
 	   ${CMAKE_CURRENT_SOURCE_DIR}/icon.png
 	)
