@@ -231,7 +231,7 @@ if (APPLE)
    # So we need to set the .vst bundle using "extended attributes" in MacOSX (like SetFile -a C, GetFileInfo).
    # This little 'fileicon' utility does it:
    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-      COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fileicon set ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.vst ${CMAKE_CURRENT_SOURCE_DIR}/icon.png
+      COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fileicon set ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.vst ${CMAKE_CURRENT_SOURCE_DIR}/src/icon.png
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       COMMENT "Assign a icon to the bundle..."
    )
