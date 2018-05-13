@@ -65,11 +65,11 @@ UTF8CodePointIterator () noexcept = default;
 ```
 To
 ```
-//UTF8CodePointIterator () noexcept = default;          // KEVIN: doesnt compile under clang-cl
+//UTF8CodePointIterator () noexcept = default;          // original: doesnt compile under clang-cl
 
-//UTF8CodePointIterator () /*noexcept*/ = default;      // KEVIN: this resulted in error under clang-cl
+//UTF8CodePointIterator () /*noexcept*/ = default;      // this resulted in error under clang-cl
 
-UTF8CodePointIterator () noexcept /*=default*/: it() {} // KEVIN: removed default, replace with {}
+UTF8CodePointIterator () noexcept /*=default*/: it() {} // removed default, replace with {}
 
 ```
 
