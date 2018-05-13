@@ -1,0 +1,9 @@
+[submodule "vstgui"]
+	path = vstgui
+	url = https://github.com/steinbergmedia/vstgui.git
+[submodule "Modules"]
+	path = Modules
+	url = https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc.git
+[submodule "MrsWatson"]
+	path = MrsWatson
+	url = https://github.com/teragonaudio/MrsWatson.git

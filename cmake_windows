@@ -1,0 +1,24 @@
+
+rm -rf build-crosswin32
+mkdir -p build-crosswin32 && cd build-crosswin32
+if [ ! -f ./Makefile ]; then
+   cmake -DCMAKE_TOOLCHAIN_FILE=Modules/cmake_example/Modules/Windows32.cmake ..
+fi
+make clean
+make -j 16
+#rm -rf ~/Library/Audio/Plug-Ins/VST/Mantis307-x86
+#make install
+cd -
+
+rm -rf build-crosswin64
+mkdir -p build-crosswin64 && cd build-crosswin64
+if [ ! -f ./Makefile ]; then
+   cmake -DCMAKE_TOOLCHAIN_FILE=Modules/cmake_example/Modules/Windows64.cmake ..
+fi
+make clean
+make -j 16
+#rm -rf ~/Library/Audio/Plug-Ins/VST/Mantis307-x64
+#make install
+cd -
+
+

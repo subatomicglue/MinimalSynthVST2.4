@@ -1,0 +1,5 @@
+rm Modules
+rm vstgui
+ln -s ../MantisSynth/cmake/Modules/cmake_example/Modules .
+ln -s ../MantisSynth/vstgui .
+

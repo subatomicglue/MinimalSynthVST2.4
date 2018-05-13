@@ -1,0 +1,2 @@
+rm -rf Makefile CMakeCache.txt CMakeFiles *.vst install_manifest.txt cmake_install.cmake *.dmg *.tar.gz *.pkg _CPack_Packages *.plist *.rc CPackConfig.cmake CPackSourceConfig.cmake install_*.txt packager_structure VSTPluginDir .DS_Store *.wav out* build-* build??
+

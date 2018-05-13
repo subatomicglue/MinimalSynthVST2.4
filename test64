@@ -1,0 +1,5 @@
+#!/bin/sh
+
+build-mrs/build/main/mrswatson64 -m test.mid  -o test.wav --plugin 'build64/Minimal' --verbose --display-info --log-file log.txt
+
+

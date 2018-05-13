@@ -1,0 +1,6 @@
+LIBRARY     MANTIS307
+EXPORTS
+	main=VSTPluginMain
+	main_plugin=VSTPluginMain
+	MAIN
+	VSTPluginMain

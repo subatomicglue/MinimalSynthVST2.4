@@ -1,0 +1,22 @@
+
+mkdir -p build32 && cd build32
+if [ ! -f ./Makefile ]; then
+   cmake -DCMAKE_TOOLCHAIN_FILE=Modules/cmake_example/Modules/Native32.cmake ..
+fi
+make clean
+make -j 16
+#rm -rf ~/Library/Audio/Plug-Ins/VST/Minimal-x86
+#make install
+cd -
+
+
+mkdir -p build64 && cd build64
+if [ ! -f ./Makefile ]; then
+   cmake -DCMAKE_TOOLCHAIN_FILE=Modules/cmake_example/Modules/Native64.cmake ..
+fi
+make clean
+make -j 16
+#rm -rf ~/Library/Audio/Plug-Ins/VST/Minimal-x64
+#make install
+cd -
+
