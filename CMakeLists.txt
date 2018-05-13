@@ -127,11 +127,11 @@ set(VST_SOURCES_PLUGMAIN
 )
 
 set(MINIMAL_SOURCES
-  ${CMAKE_CURRENT_SOURCE_DIR}/MinimalEffect.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/MinimalEffect.cpp
 )
 
 set(RESOURCE_FILES
-  ${CMAKE_CURRENT_SOURCE_DIR}/bmp00128.png
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/bmp00128.png
 )
 
 set(VSTPLUGIN_INCLUDE_DIRS
@@ -154,13 +154,13 @@ set(INCLUDE_DIRS
 )
 
 if (WIN32)
-  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resource.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/Resource.rc)
-  set(DEF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/windows.def ${CMAKE_CURRENT_SOURCE_DIR}/Resource.rc)
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc.in ${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc)
+  set(DEF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/windows.def ${CMAKE_CURRENT_SOURCE_DIR}/src/Resource.rc)
   set(LINK_LIBS Gdi32.lib Shell32.lib Ole32.lib User32.lib Comdlg32.lib Advapi32.lib)
 endif()
 if (APPLE)
-	set_source_files_properties(PkgInfo PROPERTIES MACOSX_PACKAGE_LOCATION .)
-	set(DEF_FILE PkgInfo)
+	set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/src/PkgInfo PROPERTIES MACOSX_PACKAGE_LOCATION .)
+	set(DEF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/PkgInfo)
 	set(LINK_LIBS
 	   "-framework CoreServices"
 	   "-framework Carbon"
@@ -171,12 +171,12 @@ if (APPLE)
 	   "-framework OpenGL"
 	)
 	set(ICONS
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_128x128.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_16x16.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_16x16@2x.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icons/icon_32x32@2x.png
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icon.icns
-	   ${CMAKE_CURRENT_SOURCE_DIR}/icon.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icons/icon_128x128.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icons/icon_16x16.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icons/icon_16x16@2x.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icons/icon_32x32@2x.png
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icon.icns
+	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icon.png
 	)
 endif()
 
@@ -224,12 +224,8 @@ if (APPLE)
     MACOSX_BUNDLE_COPYRIGHT "(c) subatomiclabs (2008-Present)"
 	  RESOURCE "${RESOURCE_FILES}"
 	)
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_128x128.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_16x16.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_16x16@2x.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icons/mantis_32x32@2x.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icon.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/icon.icns PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+   set_source_files_properties(${ICONS} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+
    # aaaaand.... this is the only one that actually sets the icon for the folder:
    # The Info.plist works for .app bundles, but we have a .vst bundle
    # So we need to set the .vst bundle using "extended attributes" in MacOSX (like SetFile -a C, GetFileInfo).

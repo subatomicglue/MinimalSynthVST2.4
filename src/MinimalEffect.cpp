@@ -1,4 +1,6 @@
 //#include <stdio.h>
+#include <string>
+#include <math.h>
 #include "MinimalEffect.h"
 #include "MinimalEditor.h"
 
