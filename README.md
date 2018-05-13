@@ -7,15 +7,16 @@ git clone https://github.com/subatomicglue/MinimalSynthVST2.4.git --recursive
 
 ## setup dependencies
 
-For Windows Cross Compile:
+For Building Windows Binaries (Cross Compile) under MacOSX:
 - `brew install llvm` - latest Clang+LLVM 6.0.0 for cross compiling to Windows.  Binaries for other platforms there too.
-- MSVC toolchain inc/lib dirs
-  * Copy MSVC 2015 include & lib directories to `~/MSVC/`
-  * See [Modules/cmake_example/README.md](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example) for how to
+- Get a copy of `MSVC 2015` toolchain's include & lib dirs
+  * Copy MSVC 2015 include & lib directories to your `~/MSVC/`
+  * See [Modules/cmake_example/README.md](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example) for a list of paths to copy (and an automated [script](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example/Modules/Platform/copy_msvc) you can use)
 
-Setup MrsWatson (for testing):
-- `cd MrsWatson && git submodule init && git submodule update && cd -`
-- `mkdir build-mrs && cd build-mrs && cmake ../MrsWatson && make -j 6 && cd -`
+Build MrsWatson (for testing scripts):
+```
+$  ./cmake_mrswatson
+```
 
 ## build:
 
@@ -46,16 +47,19 @@ $  ./test64
 
 ## troubleshooting:
 
-* Problem:
-`clang-cl` giving error during cross compile:
+### Problem:
+  - `clang-cl` giving error during cross compile
 ```
 vstgui/vstgui/lib/controls/../cstring.h(26,2):  error:
       exception specification of explicitly defaulted default constructor does not match the
       calculated one
         UTF8CodePointIterator () noexcept = default;
 ```
-* Solution:
-Change
+### Reason:
+  - `vstgui` doesn't support `clang-cl` c++11,14 or 17 modes, and needs an edit
+### Solution:
+
+Change this code (found in vstgui/vstgui/lib/controls/../cstring.h)
 ```
 UTF8CodePointIterator () noexcept = default;
 ```
