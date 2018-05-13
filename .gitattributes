@@ -35,3 +35,5 @@
 *.WOFF filter=lfs diff=lfs merge=lfs -text
 *.sqlite3 filter=lfs diff=lfs merge=lfs -text
 *.db filter=lfs diff=lfs merge=lfs -text
+*.mid filter=lfs diff=lfs merge=lfs -text
+*.MID filter=lfs diff=lfs merge=lfs -text

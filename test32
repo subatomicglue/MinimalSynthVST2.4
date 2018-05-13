@@ -1,3 +1,3 @@
 #!/bin/sh
-build-mrs/build/main/mrswatson -m test.mid  -o test.wav --plugin 'build32/Minimal' --verbose --display-info --log-file log.txt
+build-mrs/main/mrswatson -m test.mid  -o test.wav --plugin 'build32/Minimal' --verbose --display-info --log-file log.txt
 
