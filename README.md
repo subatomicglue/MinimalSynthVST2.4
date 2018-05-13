@@ -11,7 +11,7 @@ For Building Windows Binaries (Cross Compile) under MacOSX:
 - `brew install llvm` - latest Clang+LLVM 6.0.0 for cross compiling to Windows.  Binaries for other platforms there too.
 - Get a copy of `MSVC 2015` toolchain's include & lib dirs
   * Copy MSVC 2015 include & lib directories to your `~/MSVC/`
-  * See [Modules/cmake_example/README.md](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example) for a list of paths to copy (and an automated [script](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example/Modules/Platform/copy_msvc) you can use)
+  * See [Modules/cmake_example/README.md](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example#install-msvc-and-clang-compiler) for a list of paths to copy (and an automated [script](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example/Modules/Platform/copy_msvc) you can use)
 
 Build MrsWatson (for testing scripts):
 ```
