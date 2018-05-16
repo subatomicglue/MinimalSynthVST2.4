@@ -32,7 +32,7 @@ public:
         frame->setBackground( bm );
         return true;
     }
-    virtual void close () { printf( "opening editor window\n" ); frame->close(); frame = NULL; AEffGUIEditor::close(); }
+    virtual void close () { printf( "closing editor window\n" ); frame->close(); frame = NULL; AEffGUIEditor::close(); }
     virtual void setParameter (VstInt32 index, float value) {}
     virtual void valueChanged (CControl* control) {}
     inline void setProgram( int which ) {}
