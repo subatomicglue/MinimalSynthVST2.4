@@ -37,11 +37,14 @@ public:
     virtual void valueChanged (CControl* control) {}
     inline void setProgram( int which ) {}
     inline void setCurProgramName( const char* name, int curProgram ) {}
-    inline bool isOpen() const { return frame != NULL; }
-    virtual CMouseEventResult onMouseMoved (CPoint& where, const CButtonState& buttons) {}
 
-    class NagScreen { public: inline bool IsOpen() { return false; } };
-    NagScreen mNagScreen;
+    // this exists on AEffEditor
+    //virtual bool isOpen ()				{ return systemWindow != 0; }		///< Returns true if editor is currently open
+
+    // this tells us if the frame is created
+    virtual bool isOpen() { return AEffGUIEditor::isOpen() && frame != NULL; }
+
+    virtual CMouseEventResult onMouseMoved (CPoint& where, const CButtonState& buttons) {}
 };
 
 #endif
