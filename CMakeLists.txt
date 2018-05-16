@@ -178,6 +178,8 @@ if (APPLE)
 	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icon.icns
 	   ${CMAKE_CURRENT_SOURCE_DIR}/src/icon.png
 	)
+  add_definitions("-Wno-#warnings" -Wno-invalid-source-encoding -Wno-deprecated-register -Wno-unused-value -Wno-nonportable-include-path -Wno-deprecated-declarations)
+  add_definitions(-DVST_2_4_EXTENSIONS -DMACX -DMAC)
 endif()
 
 
@@ -190,6 +192,7 @@ add_library(${PROJECT_NAME} STATIC ${VSTGUI_SOURCES})
 set(PROJECT_NAME "vstsdk")
 include_directories(${VSTPLUGIN_INCLUDE_DIRS})
 add_library(${PROJECT_NAME} STATIC ${VST_SOURCES})
+
 
 # the vst effect as a static lib
 set(PROJECT_NAME "MinimalCore")
@@ -205,9 +208,6 @@ set(PROJECT_NAME "Minimal")
 include_directories(${INCLUDE_DIRS})
 add_library(${PROJECT_NAME} MODULE ${VST_SOURCES_PLUGMAIN} ${DEF_FILE} ${ICONS} ${RESOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} ${LINK_LIBS} MinimalCore vstgui vstsdk)
-if (DEFINED MANTIS_EMBEDDED)
-  target_compile_options(${PROJECT_NAME} PUBLIC -DNONAG -DNOGUI)
-endif()
 
 # MacOSX bundle properties
 if (APPLE)
@@ -262,9 +262,6 @@ elseif(UNIX AND NOT APPLE) #Linux
     RUNTIME DESTINATION .
     COMPONENT MinimalInstall
   )
-endif()
-if(APPLE)
-   set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-DVST_2_4_EXTENSIONS -DMACX -DMAC -Wno-#warnings -Wno-invalid-source-encoding -Wno-deprecated-register -Wno-unused-value -Wno-nonportable-include-path -Wno-deprecated-declarations")
 endif()
 
 
