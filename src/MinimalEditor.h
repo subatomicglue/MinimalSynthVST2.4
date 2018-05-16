@@ -44,7 +44,7 @@ public:
     // this tells us if the frame is created
     virtual bool isOpen() { return AEffGUIEditor::isOpen() && frame != NULL; }
 
-    virtual CMouseEventResult onMouseMoved (CPoint& where, const CButtonState& buttons) {}
+    virtual CMouseEventResult onMouseMoved (CPoint& where, const CButtonState& buttons) { return kMouseEventHandled; }
 };
 
 #endif
