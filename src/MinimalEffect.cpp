@@ -92,12 +92,12 @@ bool MinimalEffect::getEffectName (char* name)
 
 bool MinimalEffect::getProductString (char* text)
 {
-    strncpy( text, "Product", kVstMaxProductStrLen );
+    strncpy( text, "MinimalEffect Product", kVstMaxProductStrLen );
 	return true;
 }
 
 bool MinimalEffect::getVendorString (char* text)
 {
-    strncpy( text, "vendor", kVstMaxVendorStrLen );
+    strncpy( text, "subatomiclabs", kVstMaxVendorStrLen );
 	return true;
 }
