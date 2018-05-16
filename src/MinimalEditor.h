@@ -22,6 +22,7 @@ public:
         AEffGUIEditor::open( ptr );
         printf( "opening editor window\n" );
         CBitmap* bm = new CBitmap( CResourceDescription( 128 ) );
+        //CBitmap* bm = new CBitmap( CResourceDescription( "bmp00128.png" ) ); // works the same as 128
         CRect size = CRect(0, 0, bm->getWidth(), bm->getHeight() );
         rect.left   = 0;
         rect.top    = 0;
