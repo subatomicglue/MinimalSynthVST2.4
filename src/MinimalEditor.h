@@ -21,13 +21,17 @@ public:
     virtual bool open( void* ptr ) {
         AEffGUIEditor::open( ptr );
         printf( "opening editor window\n" );
-        CBitmap* bm = new CBitmap( CResourceDescription( 128 ) );
+        CBitmap* bm = new CBitmap( CResourceDescription( 128 ) ); // magically refers to bmp00128.png
         //CBitmap* bm = new CBitmap( CResourceDescription( "bmp00128.png" ) ); // works the same as 128
+
+        // set protected member AEffGUIEditor::rect (no setRect available)
         CRect size = CRect(0, 0, bm->getWidth(), bm->getHeight() );
         rect.left   = 0;
         rect.top    = 0;
         rect.right  = size.getWidth();
         rect.bottom  = size.getHeight();
+
+        // set protected member VSTGUIEditorInterface::frame (no setFrame available)
         frame = new CFrame( size, this );
         frame->open( ptr );
         frame->setBackground( bm );
