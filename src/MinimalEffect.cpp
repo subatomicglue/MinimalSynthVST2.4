@@ -12,11 +12,11 @@ AudioEffect* createEffectInstance( audioMasterCallback audioMaster )
 MinimalEffect::MinimalEffect (audioMasterCallback audioMaster)
 	: AudioEffectX (audioMaster, 1/*numprograms*/, 1/*numparams*/)
 {
-    editor = new MinimalEditor( this );
+    this->setEditor( new MinimalEditor( this ) );
     curProgram = 0;
     setUniqueID( 'sUBm' );	// this should be unique, use the Steinberg web page for plugin Id registration
-	setNumInputs(0);	// no input in this synth
-	setNumOutputs(2);	// stereo output
+    setNumInputs(0);	// no input in this synth
+    setNumOutputs(2);	// stereo output
     canProcessReplacing(true);// enable processReplacing() so that hosts can know to use it
     canDoubleReplacing(true); // enable processDoubleReplacing() so that hosts can know to use it
     isSynth( true ); // true for synth, false for effect
