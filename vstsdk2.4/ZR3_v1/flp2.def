@@ -1,4 +1,0 @@
-LIBRARY			flp4
-DESCRIPTION		'FLP-4 Plugin for VstPC'
-EXPORTS			main
-
