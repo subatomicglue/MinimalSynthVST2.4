@@ -3,6 +3,7 @@
 #include <math.h>
 #include "MinimalEffect.h"
 #include "MinimalEditor.h"
+#include <plugin-bindings/vst3editor.h>
 
 AudioEffect* createEffectInstance( audioMasterCallback audioMaster )
 {
@@ -13,8 +14,9 @@ MinimalEffect::MinimalEffect (audioMasterCallback audioMaster)
 	: AudioEffectX (audioMaster, 1/*numprograms*/, 1/*numparams*/)
 {
     this->setEditor( new MinimalEditor( this ) );
+    //this->setEditor( new VSTGUI::VST3Editor (this, "view", "myEditor.uidesc") );
     curProgram = 0;
-    setUniqueID( 'sUBm' );	// this should be unique, use the Steinberg web page for plugin Id registration
+    setUniqueID( 'sUBx' );	// this should be unique, use the Steinberg web page for plugin Id registration
     setNumInputs(0);	// no input in this synth
     setNumOutputs(2);	// stereo output
     canProcessReplacing(true);// enable processReplacing() so that hosts can know to use it
