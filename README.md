@@ -13,7 +13,7 @@ For Building Windows Binaries (Cross Compile) under MacOSX:
   * Copy MSVC 2015 include & lib directories to your `~/MSVC/`
   * See [Modules/cmake_example/README.md](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example#install-msvc-and-clang-compiler) for a list of paths to copy (and an automated [script](https://github.com/subatomicglue/cross-compile-macosx-clang-windows-msvc/tree/master/cmake_example/Modules/Platform/copy_msvc) you can use)
 
-Copy the `vstsdk2.4` into `MinimalSynthVST2.4/`, For example, resulting structure will look like:
+Copy the proprietary `vstsdk2.4` you downloaded from Steinberg into `MinimalSynthVST2.4/`, For example, resulting structure will look like:
 ```
 MinimalSynthVST2.4/vstsdk2.4/public.sdk
 MinimalSynthVST2.4/vstsdk2.4/pluginterfaces
